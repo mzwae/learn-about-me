@@ -1,0 +1,11 @@
+{
+  "name": "learn-about-me",
+  "version": "1.0.0",
+  "description": "A very simple social network application ",
+  "main": "app.js",
+  "scripts": {
+    "test": "node mocha"
+  },
+  "author": "MZ",
+  "license": "MIT"
+}
