@@ -1,7 +1,7 @@
 require('dotenv').load();
 var express = require('express');
 var passport = require('passport');
-var setUpPassport = require('./setUpPassport');
+var setUpPassport = require('./setuppassport');
 
 var mongoose = require('mongoose');
 var path = require('path');
