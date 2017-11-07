@@ -22,13 +22,12 @@ var dbURI = 'mongodb://localhost:27017/express-test';
 var databaseType = "LOCAL";
 if (process.env.NODE_ENV === 'production') {
   databaseType = "REMOTE";
-  dbURI = process.env.CREDENTIALS;
+  dbURI = process.env.dbURI;
 }
-var db = mongojs(dbURI);
-
+mongoose.connect(dbURI);
 console.log("App server successfully connected to", databaseType, "Database server!");
 
-mongoose.connect('mongodb://localhost:27017/express-test');
+
 
 
 setUpPassport();
