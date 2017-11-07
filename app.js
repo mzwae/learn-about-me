@@ -32,7 +32,7 @@ console.log("App server successfully connected to", databaseType, "Database serv
 
 setUpPassport();
 
-app.set('port', process.env.PORT || 3000);
+//app.set('port', process.env.PORT || 3000);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
