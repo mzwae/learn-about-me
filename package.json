@@ -6,7 +6,7 @@
   "main": "app.js",
   "scripts": {
     "test": "node mocha",
-    "start": "node app"
+    "start": "node ./bin/www"
   },
   "author": "MZ",
   "license": "MIT",

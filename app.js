@@ -18,7 +18,19 @@ var app = express();
 
 app.use(logger('short'));
 
+var dbURI = 'mongodb://localhost:27017/express-test';
+var databaseType = "LOCAL";
+if (process.env.NODE_ENV === 'production') {
+  databaseType = "REMOTE";
+  dbURI = process.env.CREDENTIALS;
+}
+var db = mongojs(dbURI);
+
+console.log("App server successfully connected to", databaseType, "Database server!");
+
 mongoose.connect('mongodb://localhost:27017/express-test');
+
+
 setUpPassport();
 
 app.set('port', process.env.PORT || 3000);
@@ -40,6 +52,8 @@ app.use(passport.session());
 
 app.use(routes);
 
-app.listen(app.get('port'), function(){
-  console.log('Server started on port ' + app.get('port'));
-});
+module.exports = app;
+
+//app.listen(app.get('port'), function(){
+//  console.log('Server started on port ' + app.get('port'));
+//});
